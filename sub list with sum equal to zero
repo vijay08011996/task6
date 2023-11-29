@@ -1,0 +1,25 @@
+def has_sublist_with_zero_sum(nums):
+    sum_set = set()
+    current_sum = 0
+    
+    for num in nums:
+        current_sum += num
+        
+        # If the current_sum is zero or has been seen before, there's a sublist with zero sum
+        if current_sum == 0 or current_sum in sum_set:
+            return True
+        
+        sum_set.add(current_sum)
+    
+    return False
+
+# Given list
+given_list = [4, 2, -3, 1, 6]
+
+# Check if there is a sublist with sum equal to zero
+has_zero_sum_sublist = has_sublist_with_zero_sum(given_list)
+
+if has_zero_sum_sublist:
+    print("There is a sublist with sum equal to zero.")
+else:
+    print("There is no sublist with sum equal to zero.")

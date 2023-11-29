@@ -1,0 +1,17 @@
+def sum_first_last_digit(number):
+    # Convert the number to a string to easily access digits
+    num_str = str(number)
+    
+    # Get the first and last digits
+    first_digit = int(num_str[0])
+    last_digit = int(num_str[-1])
+    
+    # Calculate the sum of the first and last digits
+    sum_of_digits = first_digit + last_digit
+    
+    return sum_of_digits
+
+# Example usage
+given_number = 5738
+result = sum_first_last_digit(given_number)
+print(f"The sum of the first and last digit of {given_number} is: {result}")

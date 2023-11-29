@@ -1,0 +1,12 @@
+# Three example lists
+list1 = [2, 4, 7, 3, 9, 5]
+list2 = [7, 3, 1, 8, 5]
+list3 = [3, 5, 6, 7]
+
+# Find duplicates among the lists
+duplicates = set(list1) & set(list2) & set(list3)
+
+if len(duplicates) > 0:
+    print("Duplicates found:", duplicates)
+else:
+    print("No duplicates found.")

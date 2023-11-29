@@ -1,0 +1,20 @@
+def distribute_mangoes(mangoes, students):
+    mangoes.sort()  # Sort the list of mangoes in ascending order
+    bags_count = len(mangoes)
+    max_mangoes = mangoes[bags_count - 1]  # Maximum mangoes in a bag
+    min_mangoes = mangoes[0]  # Minimum mangoes in a bag
+
+    # Calculate the minimum difference required
+    min_difference = float('inf')
+    for i in range(bags_count - students + 1):
+        diff = mangoes[i + students - 1] - mangoes[i]
+        min_difference = min(min_difference, diff)
+
+    return min_difference
+
+# Example
+mangoes_list = [10, 7, 15, 12, 3]
+students_count = 3
+
+min_diff = distribute_mangoes(mangoes_list, students_count)
+print(f"The minimum difference between bags: {min_diff}")
